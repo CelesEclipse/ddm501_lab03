@@ -10,7 +10,7 @@ on:
 jobs:
   test:
     # Run on YOUR machine, not on a GitHub-hosted runner.
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - name: Check out the code
