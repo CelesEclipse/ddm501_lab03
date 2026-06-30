@@ -3,9 +3,9 @@ name: CI
 # Run the test suite on every push and pull request to main.
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   test:
