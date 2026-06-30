@@ -1,0 +1,25 @@
+name: CI
+
+# Run the test suite on every push and pull request to main.
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test:
+    # Run on YOUR machine, not on a GitHub-hosted runner.
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt -r requirements-dev.txt
+
+      - name: Run the test suite
+        run: pytest -v
